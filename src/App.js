@@ -5,10 +5,23 @@ import styled, { createGlobalStyle } from "styled-components";
 import Home from "./Components/Home";
 
 const GlobalStyle = createGlobalStyle`
+
+  html {
+    margin: 0;
+    padding: 0;
+  }
+  
   body {
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    height: 100vh;
+    background-image: linear-gradient(
+      45deg,
+      #ff9a9e 0%,
+      #fad0c4 99%,
+      #fad0c4 100%
+    );
+    font-family: 'Abel', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
       "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
       sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -17,7 +30,8 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const AppContainer = styled.div`
-  //background: red;/
+  max-width: 90%;
+  margin: 0 auto;
 `;
 
 const App = () => (
@@ -25,26 +39,9 @@ const App = () => (
     <GlobalStyle />
     <AppContainer>
       <BrowserRouter>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about/">About</Link>
-              </li>
-              <li>
-                <Link to="/users/">Users</Link>
-              </li>
-            </ul>
-          </nav>
-
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/" exact component={Home} />
-          </Switch>
-        </div>
+        <Switch>
+          <Route path="/" exact component={Home} />
+        </Switch>
       </BrowserRouter>
     </AppContainer>
   </>
