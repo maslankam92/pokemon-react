@@ -6,6 +6,10 @@ import Home from "./Components/Home";
 
 const GlobalStyle = createGlobalStyle`
 
+  * {
+  margin: 0;
+  }
+  
   html {
     margin: 0;
     padding: 0;
